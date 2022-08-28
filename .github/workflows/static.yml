@@ -36,7 +36,8 @@ jobs:
         with:
           node-version: 16
           cache: 'npm'
-      - run: yarn build
+      - run: yarn install
+      - run: NODE_ENV=production yarn build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
